@@ -29,6 +29,7 @@ console.log(esPrimo(numeroPrimo) ? `${numeroPrimo} es un número primo.` : `${nu
 
 let numeroPri = parseInt(prompt("Ingrese un número para determinar si es primo: "));
 
+//--------------------------------------------------------------------------------------------------------------------------------
 function esPrimo(numero) {
   if (numero <= 1) {
     return false; // Los números menores o iguales a 1 no son primos
@@ -48,3 +49,18 @@ if (esPrimo(numeroPri)) {
 } else {
   console.log(`${numeroPri} no es un número primo.`);
 }
+
+//Ejercicio 3: Suma de Números Impares. Escribe una función que tome un número positivo como parámetro y devuelva la suma de todos los números impares desde 1 hasta ese número.
+
+let numero1 = parseInt(prompt("Ingrese un numero para mostrar la suma de los numemros impares que contiene: "));
+function sumaDeImpares (numero1){
+    let suma = 0;  // Inicializamos la suma en 0
+    for (let i=0; i<=numero1; i++){
+        if(i%2===1){
+            suma += i; // Sumamos solo los números pares
+        }
+    }
+    return suma;
+}
+const resultadoImpar = sumaDeImpares(numero1);
+console.log(`La suma de los números impares hasta ${numero1} es: ${resultadoImpar}`);
