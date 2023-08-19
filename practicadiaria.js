@@ -67,7 +67,7 @@ console.log(`La suma de los números impares hasta ${numero1} es: ${resultadoImp
 
 // Practica 17 de agosto del 2023
 //Ejercicio 1 Contador de Números Pares e Impares
-
+/*
 let numero = parseInt(prompt("Ingrese un número entero positivo: "));
 let pares = 0;
 let impares = 0;
@@ -133,3 +133,69 @@ let x = parseInt(prompt("Ingrese un número entero positivo: "));
 for (i=1; i<=x; i +=2){ 
   console.log(i);
 }
+*/
+// 18 DE AGOSTO//
+//Ejercicio: Contador de Números Positivos, Negativos y Ceros//
+/*let numerosPositivos = 0;
+let numeroNegativos = 0;
+let ceros=0;
+
+while (true){
+  let numero = parseInt(prompt("Ingrese un número entero (0 para terminar): "));
+
+  if (numero ===0){
+    break; // termina bucle sin ingresa cero
+  } else if(numero>0){
+    numerosPositivos++;
+  } else if(numero<0){
+    numeroNegativos++;
+  }else{
+    ceros++;
+  }
+}
+
+console.log(`La cantidad de numeros positivos ingresados es de: ${numerosPositivos}`);
+console.log(`La cantidad de numeros negativos ingresados es de : ${numeroNegativos}`);
+console.log(`La cantidad de otros caracteres ingresados es de: ${ceros}`);
+
+//Ejercicio: Cálculo de Factorial Escribe un programa que solicite al usuario ingresar un número entero positivo n y calcule el factorial de ese número.
+
+function calcularFactorial(n){
+  let factorial = 1 ;
+  for (i=1; i<=n; i++){
+    factorial *=i;
+  }
+
+  return factorial;
+}
+
+let numero = parseInt(prompt("Ingrese un número entero positivo: "));
+let resultado = calcularFactorial(numero);
+console.log(`el factorial del numero ${numero} es : ${resultado}`)
+
+*/
+// Ejercicio: Números Perfectos .Escribe un programa que determine si un número entero positivo n es un número perfecto. Un número perfecto es aquel que es igual a la suma de sus divisores propios positivos (excluyendo el número en sí mismo).
+
+function esNumeroPerfercto(num){  //Esto define una función llamada esNumeroPerfecto que toma un número como argumento y devuelve true si el número es perfecto y false si no lo es.
+  let sumaDivisores=0;  //Inicializamos una variable llamada sumaDivisores que se utilizará para acumular la suma de los divisores propios positivos del número
+
+  
+  // Utilizamos un bucle for para iterar desde 1 hasta numero - 1. En cada iteración, verificamos si el número es divisible por i (un posible divisor propio positivo).
+  for (i=1; i< num; i++){
+    if (num % i ===0){ //Si el número es divisible por i, significa que i es un divisor propio positivo. 
+      sumaDivisores += i; // Sumamos el divisor propio al acumulador
+    }
+  }
+  return sumaDivisores===num; // Comparamos la suma con el número original
+}
+
+// Llamamos a la función esNumeroPerfecto y mostramos el resultado en la consola
+let num = parseInt(prompt("Ingrese un número entero positivo: "));
+
+if(esNumeroPerfercto(num)){
+  console.log(`${num} es un numero perfecto.`);
+}else{
+  console.log(`${num} no es numero perfecto.`)
+}
+
+
