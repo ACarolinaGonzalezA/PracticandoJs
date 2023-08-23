@@ -175,7 +175,7 @@ console.log(`el factorial del numero ${numero} es : ${resultado}`)
 
 */
 // Ejercicio: Números Perfectos .Escribe un programa que determine si un número entero positivo n es un número perfecto. Un número perfecto es aquel que es igual a la suma de sus divisores propios positivos (excluyendo el número en sí mismo).
-
+/*
 function esNumeroPerfercto(num){  //Esto define una función llamada esNumeroPerfecto que toma un número como argumento y devuelve true si el número es perfecto y false si no lo es.
   let sumaDivisores=0;  //Inicializamos una variable llamada sumaDivisores que se utilizará para acumular la suma de los divisores propios positivos del número
 
@@ -197,5 +197,79 @@ if(esNumeroPerfercto(num)){
 }else{
   console.log(`${num} no es numero perfecto.`)
 }
+*/
+//ejercicios del 19 de agsto //
+//Ejercicio: Suma de Dígitos. Escribe un programa que solicite al usuario ingresar un número entero positivo y calcule la suma de sus dígitos.
+
+/*function sumaDigitos(digitos){ //Esto define una función llamada sumaDigitos que toma un número como argumento y devuelve la suma de sus dígitos.
+  let suma = 0; // Inicializamos una variable llamada suma en 0. Esta variable se usará para acumular la suma de los dígitos.
+  
+  while (digitos > 0){ //Utilizamos un bucle while para iterar a través de los dígitos del número. El bucle se ejecutará mientras el número sea mayor que 0.
+    let nume= digitos %10; //Calculamos el último dígito del número utilizando el operador módulo (%). Esto nos da el dígito más a la derecha.
+    suma += nume; //Agregamos el valor del dígito actual al acumulador suma.
+    digitos = Math.floor(digitos/10); //Eliminamos el último dígito del número dividiéndolo entre 10 y tomando la parte entera utilizando Math.floor.
+  }
+  return suma; //Devolvemos el valor total acumulado en la variable suma
+}
+let digitos = parseInt(prompt("Ingrese un número entero positivo con dos o más digitos: "));
+let resultado = sumaDigitos(digitos);
+
+console.log(`la suma de los digitos de ${digitos} es: ${resultado}`);
 
 
+
+function sumaDigitos(numero) {
+  let suma = 0;
+
+  while (numero > 0) {
+    let digito = numero % 10;
+    suma += digito;
+    numero = Math.floor(numero / 10);
+  }
+
+  return suma;
+}*/
+
+//ejercicios del 20 de agosto del 2022
+
+//Ejercicio: Números Primos en un Rango
+function esPrimo(numero){  // Definición de la función esPrimo
+  if(numero <= 1){
+    return false; // Los números menores o iguales a 1 no son primos
+  }
+// Comprobación de divisores potenciales hasta la raíz cuadrada del número
+  for (let i=2; i<= Math.sqrt(numero); i++){
+    if(numero % i === 0){
+      return false; // Si encuentra un divisor, el número no es primo
+    }
+  } 
+  return true; // Si no se encontraron divisores, el número es primo
+}
+
+  let inicio = parseInt(prompt("Ingrese el número de inicio: "));
+  let fin = parseInt(prompt("Ingrese el número de fin: "));
+
+console.log(`Los numeros primos entre ${inicio} a ${fin} son: `);
+// Bucle para iterar a través de los números en el rango
+  for (let i=inicio; i<= fin; i++){
+    if (esPrimo(i)){
+      console.log(i); 
+    }
+  }
+
+function contarVocales(cadena){
+  let contador = 0; 
+  let vocales = "aeiouAEIOU";
+
+  for (let letra of cadena){
+    if (vocales.includes(letra)){
+      contador++;
+    }
+  }
+  return contador;
+}
+
+let texto = prompt("Ingrese una cadena de texto: "); 
+let cantidadVocales = contarVocales(texto); 
+
+console.log(`la cadena de "${texto}" tiene ${cantidadVocales}.`); 
